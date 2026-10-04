@@ -1,1 +1,214 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Trace</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="logo">
+                <span>◈</span>
+                CAMPUS TRACE
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                MATCH ENGINE ONLINE
+            </div>
+
+        </header>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="eyebrow">
+                LOST & FOUND / TEXT MATCHING SYSTEM
+            </div>
+
+            <h1>
+                Find what<br>
+                <span>you lost.</span>
+            </h1>
+
+            <p>
+                Describe your missing item and let the
+                matching engine search through reported
+                found items.
+            </p>
+
+        </section>
+
+
+        <!-- SEARCH -->
+
+        <section class="search-section">
+
+            <div class="section-label">
+                <span>01</span>
+                LOST ITEM DESCRIPTION
+            </div>
+
+            <div class="search-box">
+
+                <textarea
+                    id="lostItem"
+                    placeholder="Example: Black Samsung water bottle with silver cap lost near the library..."
+                ></textarea>
+
+                <button onclick="findMatches()">
+                    <span>SCAN FOR MATCHES</span>
+                    <b>→</b>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCANNING -->
+
+        <div id="scanner" class="scanner hidden">
+
+            <div class="scanner-line"></div>
+
+            <span>ANALYZING ITEM DESCRIPTION...</span>
+
+        </div>
+
+
+        <!-- RESULTS -->
+
+        <section id="results" class="results hidden">
+
+            <div class="result-header">
+
+                <div>
+                    <div class="section-label">
+                        <span>02</span>
+                        MATCH ANALYSIS
+                    </div>
+
+                    <h2>
+                        Possible matches found
+                    </h2>
+                </div>
+
+                <div class="match-count" id="matchCount">
+                    0
+                </div>
+
+            </div>
+
+
+            <!-- BEST MATCH -->
+
+            <div class="best-match">
+
+                <div class="match-top">
+
+                    <div>
+
+                        <small>
+                            BEST MATCH
+                        </small>
+
+                        <h3 id="bestName">
+                            —
+                        </h3>
+
+                    </div>
+
+                    <div class="score" id="bestScore">
+                        0%
+                    </div>
+
+                </div>
+
+
+                <div class="meter">
+
+                    <div id="bestMeter"></div>
+
+                </div>
+
+
+                <div class="details">
+
+                    <div>
+                        <span>LOCATION</span>
+                        <strong id="bestLocation">—</strong>
+                    </div>
+
+                    <div>
+                        <span>DATE FOUND</span>
+                        <strong id="bestDate">—</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="matched-title">
+                    MATCHED FEATURES
+                </div>
+
+                <div id="matchedWords" class="tags">
+                    —
+                </div>
+
+            </div>
+
+
+            <!-- OTHER RESULTS -->
+
+            <div class="other-title">
+                OTHER POSSIBLE MATCHES
+            </div>
+
+            <div id="otherMatches"></div>
+
+        </section>
+
+
+        <!-- DATABASE -->
+
+        <section class="database">
+
+            <div>
+                <span class="database-number">
+                    06
+                </span>
+
+                <span>
+                    FOUND ITEMS IN DATABASE
+                </span>
+            </div>
+
+            <div class="database-status">
+                ● LIVE DATASET
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
